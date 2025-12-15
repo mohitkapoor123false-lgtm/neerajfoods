@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Cafe | Modern Bites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="m-arch">M</span> Neeraj Cafe
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#menu"><i class="fa-solid fa-burger"></i> Menu</a></li>
+            <li><a href="#offers"><i class="fa-solid fa-tags"></i> Offers</a></li>
+            <li><a href="#app"><i class="fa-solid fa-mobile-screen"></i> App</a></li>
+            <li><a href="#footer"><i class="fa-solid fa-location-dot"></i> Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#menu" class="btn-order">Order Now</a>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <span class="tagline">The New Taste of Town</span>
+            <h1>Craving the <br><span class="highlight">Crunch?</span></h1>
+            <p>Experience the legendary taste of Neeraj Cafe. Fresh ingredients, iconic recipes, and a vibe you can't resist.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="location.href='#menu'">View Menu</button>
+                <button class="btn-outline">Watch Video <i class="fa-solid fa-play"></i></button>
+            </div>
+        </div>
+        <div class="hero-img">
+            <div class="blob"></div>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Delicious Burger" class="floating-burger">
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="section-header">
+            <h2>Our Favorites</h2>
+            <p>Hand-picked categories for every mood.</p>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger">
+                </div>
+                <div class="card-content">
+                    <h3>Signature Burgers</h3>
+                    <p>Juicy patties, fresh veggies, secret sauce.</p>
+                    <div class="price-row">
+                        <span class="price">From $5.99</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img">
+                    <img src="data:image/webp;base64,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" alt="Fries">
+                </div>
+                <div class="card-content">
+                    <h3>World Famous Fries</h3>
+                    <p>Crispy, golden, and perfectly salted.</p>
+                    <div class="price-row">
+                        <span class="price">From $2.99</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Shake">
+                </div>
+                <div class="card-content">
+                    <h3>McNeeraj Shakes</h3>
+                    <p>Thick, creamy, and full of flavor.</p>
+                    <div class="price-row">
+                        <span class="price">From $3.49</span>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="offers-section">
+        <div class="offer-banner">
+            <div class="offer-text">
+                <span class="offer-tag">Limited Time</span>
+                <h2>Get 50% OFF</h2>
+                <p>On your first order via the Neeraj Cafe App.</p>
+                <button class="btn-white">Claim Offer</button>
+            </div>
+            <div class="offer-img">
+                <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Combo Meal">
+            </div>
+        </div>
+    </section>
+
+    <section id="app" class="app-section">
+        <div class="app-container">
+            <div class="app-content">
+                <h2>Ordering Made Easy</h2>
+                <p>Skip the line. Earn points. Get free food.</p>
+                <div class="store-badges">
+                    <button class="store-btn"><i class="fa-brands fa-apple"></i> App Store</button>
+                    <button class="store-btn"><i class="fa-brands fa-google-play"></i> Play Store</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Neeraj Cafe</h3>
+                <p>Making moments delicious since 2024.</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>FAQ</li>
+                    <li>Store Locator</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Neeraj Cafe. Designed with <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

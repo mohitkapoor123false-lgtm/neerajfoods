@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rx Pharmacy Institute | D-Pharm & B-Pharm Admissions Open</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #8b0d1e;
+      --primary-dark: #5e0813;
+      --primary-light: #b31b31;
+      --accent: #d97706;
+      --accent-gold: #f59e0b;
+      --dark: #0f172a;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 12px 30px -5px rgba(139, 13, 30, 0.12), 0 8px 10px -6px rgba(139, 13, 30, 0.08);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--gray-800);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Notice Bar */
+    .topbar {
+      background: var(--dark);
+      color: var(--white);
+      font-size: 0.85rem;
+      padding: 0.55rem 0;
+    }
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .topbar-links a {
+      margin-left: 1.25rem;
+      color: #cbd5e1;
+      transition: var(--transition);
+    }
+    .topbar-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+      z-index: 1000;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+    .logo-badge {
+      background: var(--primary);
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      border: 2px solid var(--accent-gold);
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    .nav-menu a {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--gray-800);
+      transition: var(--transition);
+    }
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+    .cta-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white) !important;
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(139, 13, 30, 0.25);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(139, 13, 30, 0.35);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #fdf2f4 0%, #fff7ed 100%);
+      padding: 3.8rem 0 3rem;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(139, 13, 30, 0.1);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero-p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+    }
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .feature-chip {
+      background: var(--white);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-left: 3px solid var(--accent-gold);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-800);
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+    .btn-secondary:hover {
+      background: var(--gray-50);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Admission Quick Card */
+    .quick-form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-top: 5px solid var(--primary);
+    }
+    .quick-form-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+      color: var(--primary);
+    }
+    .form-group {
+      margin-bottom: 0.9rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--gray-800);
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 13, 30, 0.15);
+    }
+
+    /* Section Base */
+    section {
+      padding: 4.5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .section-title p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+
+    /* Approvals Bar */
+    .approval-bar {
+      background: var(--gray-50);
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      border-top: 1px solid var(--gray-200);
+    }
+    .approval-flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .approval-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--gray-800);
+    }
+    .approval-item i {
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    /* Results Showcase Banner */
+    .results-hero-card {
+      background: linear-gradient(135deg, #fff7ed 0%, #fdf2f4 100%);
+      border: 2px solid #fed7aa;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .results-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box {
+      background: var(--white);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .stat-box .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-box .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    /* Why Choose 13 Points */
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .point-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    .point-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--primary-light);
+    }
+    .point-num {
+      background: #fdf2f4;
+      color: var(--primary);
+      font-weight: 800;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .point-content h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark);
+    }
+    .point-content p {
+      font-size: 0.84rem;
+      color: var(--gray-600);
+    }
+
+    /* Video Section */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+    .video-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+    .video-wrapper {
+      position: relative;
+      background: #000;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-body {
+      padding: 1.25rem;
+    }
+    .video-body h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+    .video-body p {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+    }
+
+    /* Interactive Filterable Gallery */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      background: var(--gray-100);
+      color: var(--gray-800);
+      border: none;
+      padding: 0.55rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 250px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      border: 1px solid var(--gray-200);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.92), transparent);
+      color: var(--white);
+      padding: 1.5rem 1rem 0.65rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Fee Package */
+    .fee-section {
+      background: linear-gradient(to bottom, #fdf2f4, #ffffff);
+    }
+    .fee-box {
+      max-width: 940px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 20px 45px rgba(139, 13, 30, 0.12);
+      border: 2px solid #fecdd3;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+    }
+    .fee-highlight {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .fee-badge {
+      background: var(--accent-gold);
+      color: var(--dark);
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .fee-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 0.75rem 0;
+    }
+    .fee-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+    .fee-details {
+      padding: 2.5rem;
+    }
+    .fee-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .fee-list li {
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+    .fee-list li i {
+      color: #16a34a;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-card {
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border-left: 4px solid var(--primary);
+    }
+    .contact-person {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .avatar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+    }
+    .contact-meta h4 {
+      font-size: 1.15rem;
+      color: var(--dark);
+    }
+    .contact-meta span {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+    }
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      display: none;
+      place-items: center;
+      padding: 1.5rem;
+    }
+    .lightbox.active {
+      display: grid;
+    }
+    .lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 10px;
+      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      padding: 4rem 0 2rem;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+    .footer-col p {
+      line-height: 1.7;
+    }
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Sticky Mobile Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--white);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      display: none;
+      z-index: 999;
+      padding: 0.75rem 1rem;
+    }
+    .sticky-btns {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .sticky-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .sticky-call {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .sticky-whatsapp {
+      background: #25d366;
+      color: var(--white);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .results-hero-card, .fee-box, .contact-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .fee-list {
+        grid-template-columns: 1fr;
+      }
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        display: none;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .sticky-bar {
+        display: block;
+      }
+      body {
+        padding-bottom: 70px;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div>
+        <i class="fa-solid fa-graduation-cap"></i> <strong>Admissions Open 2025–2026</strong> | Direct Entry for D-Pharm & B-Pharm (No NEET / No CET Required)
+      </div>
+      <div class="topbar-links">
+        <a href="tel:+918197669720"><i class="fa-solid fa-phone"></i> +91 8197669720</a>
+        <a href="https://wa.me/918197669720"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <div class="logo-badge"><i class="fa-solid fa-prescription"></i></div>
+        <div>
+          <div>Rx Pharmacy</div>
+          <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 500; margin-top: -3px;">INSTITUTE (ESTD. 2019)</div>
+        </div>
+      </a>
+
+      <div class="mobile-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#toppers">Toppers & Results</a></li>
+        <li><a href="#why-choose">Why Rx</a></li>
+        <li><a href="#courses">Courses & Fees</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#gallery">Campus Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#apply" class="cta-btn"><i class="fa-solid fa-paper-plane"></i> Apply Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <i class="fa-solid fa-certificate text-accent"></i> PCI Approved College PCI No: 3561 / 4279
+        </div>
+        <h1>Where <span>Excellence</span> Meets Affordability</h1>
+        <p class="hero-p">
+          Start your pharmaceutical career with hands-on lab training, experienced medical faculty, no percentage criteria for admission, and complete Maharashtra State Pharmacy Council (MSPC) registration guidance in Vasai West.
+        </p>
+
+        <div class="hero-features">
+          <div class="feature-chip"><i class="fa-solid fa-check"></i> Direct Entry (No NEET / No CET)</div>
+          <div class="feature-chip"><i class="fa-solid fa-check"></i> 1 Min from Vasai Station</div>
+          <div class="feature-chip"><i class="fa-solid fa-check"></i> Exit Exam & Job Assistance</div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#apply" class="cta-btn"><i class="fa-solid fa-user-plus"></i> Enroll For 2025–26</a>
+          <a href="#courses" class="btn-secondary">View 2-Yr Package (₹1.5 Lakh)</a>
+        </div>
+      </div>
+
+      <!-- Quick Inquiry Form -->
+      <div class="quick-form-card" id="apply">
+        <h3>Book Your Seat</h3>
+        <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1.25rem;">Hurry up! Limited seats available for 2025–2026 batch.</p>
+        <form id="admissionForm">
+          <div class="form-group">
+            <label>Student Full Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Rahul Sharma" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Contact Number</label>
+            <input type="tel" class="form-control" placeholder="e.g. 9876543210" required />
+          </div>
+          <div class="form-group">
+            <label>Select Desired Course</label>
+            <select class="form-control">
+              <option value="dpharma">Diploma in Pharmacy (D. Pharma - 2 Years)</option>
+              <option value="bpharma">Bachelor of Pharmacy (B. Pharma - 4 Years)</option>
+              <option value="guidance">Exit Exam & MSPC Registration Assistance</option>
+            </select>
+          </div>
+          <button type="submit" class="cta-btn" style="width: 100%; justify-content: center; padding: 0.85rem;">
+            Submit Application
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approvals / Affiliations Bar -->
+  <div class="approval-bar">
+    <div class="container approval-flex">
+      <div class="approval-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>PCI Approved<br><small style="color:var(--gray-600)">PCI Code: 3561 / 4279</small></div>
+      </div>
+      <div class="approval-item">
+        <i class="fa-solid fa-building-columns"></i>
+        <div>MSPC Registration<br><small style="color:var(--gray-600)">Quickest Licensing Process</small></div>
+      </div>
+      <div class="approval-item">
+        <i class="fa-solid fa-award"></i>
+        <div>Affiliated Institutions<br><small style="color:var(--gray-600)">Lake Side & Bangalore Institute</small></div>
+      </div>
+      <div class="approval-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>Vasai Station Campus<br><small style="color:var(--gray-600)">Opp. VVMC & ST Bus Depot</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024-25 Results & Board Toppers Section -->
+  <section id="toppers">
+    <div class="container">
+      <div class="section-title">
+        <h2>Proven Academic Excellence</h2>
+        <p>Celebrating the remarkable milestone of our 2024–25 batch.</p>
+      </div>
+
+      <div class="results-hero-card">
+        <div>
+          <span class="badge" style="background:#fed7aa; color:#9a3412;">2024–25 BATCH RESULTS</span>
+          <h3 style="font-size: 2.1rem; color: var(--dark); margin: 0.5rem 0 1rem;">100% Result | 90% First Class</h3>
+          <p style="font-size: 0.95rem; color: var(--gray-600);">
+            Congratulations to our class toppers <strong>Akash Yadav (807 - First Class)</strong> and <strong>Manisha Yadav (752 - First Class)</strong>, alongside over 40+ distinction students.
+          </p>
+
+          <div class="results-stats">
+            <div class="stat-box">
+              <div class="num">100%</div>
+              <div class="label">Pass Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="num">90%</div>
+              <div class="label">First Class</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="IMG-20251220-WA0020.jpg" alt="2024-25 Results and Toppers" class="zoomable" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); cursor: pointer;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us: 13 Key Reasons -->
+  <section id="why-choose" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Rx Pharmacy Institute?</h2>
+        <p>13 distinct hallmarks of our academic ecosystem.</p>
+      </div>
+
+      <div class="points-grid">
+        <div class="point-card">
+          <div class="point-num">1</div>
+          <div class="point-content">
+            <h4>Quality Education & Teachers</h4>
+            <p>Taught by industry veterans and seasoned medical faculty.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">2</div>
+          <div class="point-content">
+            <h4>Personal Attention</h4>
+            <p>Small batch sizes ensuring individual faculty-student mentorship.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">3</div>
+          <div class="point-content">
+            <h4>PCI Approved College</h4>
+            <p>Recognized under official PCI Code: 3561 / 4279.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">4</div>
+          <div class="point-content">
+            <h4>Regular Lectures & Practicals</h4>
+            <p>Consistent syllabus completion, lab trials, and mock exams.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">5</div>
+          <div class="point-content">
+            <h4>Industrial Visits</h4>
+            <p>Direct exposure tours to pharmaceutical formulation facilities.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">6</div>
+          <div class="point-content">
+            <h4>Guest Lecturers</h4>
+            <p>Masterclasses and seminars by leading pharma corporate heads.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">7</div>
+          <div class="point-content">
+            <h4>Personality Development</h4>
+            <p>Grooming sessions to build professional healthcare demeanor.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">8</div>
+          <div class="point-content">
+            <h4>Soft Skills Development</h4>
+            <p>Effective communication, patient handling, and clinical ethics.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">9</div>
+          <div class="point-content">
+            <h4>Interview Preparation</h4>
+            <p>Mock HR rounds, resume enhancement, and confidence building.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">10</div>
+          <div class="point-content">
+            <h4>Job Placement Assistance</h4>
+            <p>Active support to launch your career in hospitals and retail chains.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">11</div>
+          <div class="point-content">
+            <h4>Higher Studies Guidance</h4>
+            <p>Complete roadmaps for B-Pharm, Pharm-D, and master's programs.</p>
+          </div>
+        </div>
+
+        <div class="point-card">
+          <div class="point-num">12</div>
+          <div class="point-content">
+            <h4>Exit Exam Preparation</h4>
+            <p>Rigorous test drills for national diploma pharmacy exit exams.</p>
+          </div>
+        </div>
+
+        <div class="point-card" style="grid-column: 1 / -1; background: #fff7ed; border-color: var(--accent-gold);">
+          <div class="point-num" style="background: var(--accent-gold); color: var(--dark);">13</div>
+          <div class="point-content">
+            <h4>Quickest MSPC Registration Support</h4>
+            <p>Dedicated assistance for registration with the Maharashtra State Pharmacy Council so you get your pharmacist license without bureaucratic delays.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Fee Package -->
+  <section id="courses" class="fee-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Transparent All-Inclusive Fee Structure</h2>
+        <p>No unexpected surcharges. Everything included from admission to exit exams.</p>
+      </div>
+
+      <div class="fee-box">
+        <div class="fee-highlight">
+          <span class="fee-badge">NO HIDDEN CHARGES</span>
+          <h3 style="font-size: 1.8rem; font-weight: 700;">Comprehensive 2-Year D. Pharma Package</h3>
+          <div class="fee-price">₹1,50,000 <span>/ Total Package</span></div>
+          <p style="font-size: 0.88rem; opacity: 0.9;">All academic supplies, laboratory chemicals, examination and uniform fees included.</p>
+        </div>
+
+        <div class="fee-details">
+          <h4 style="font-size: 1.2rem; color: var(--dark); margin-bottom: 0.5rem;">Package Inclusions:</h4>
+          <p style="font-size: 0.85rem; color: var(--gray-600);">Complete student kit provided on campus:</p>
+          
+          <ul class="fee-list">
+            <li><i class="fa-solid fa-circle-check"></i> Standard Textbooks</li>
+            <li><i class="fa-solid fa-circle-check"></i> Institute Uniform</li>
+            <li><i class="fa-solid fa-circle-check"></i> Practical Lab Fees</li>
+            <li><i class="fa-solid fa-circle-check"></i> Board & Exam Fees</li>
+            <li><i class="fa-solid fa-circle-check"></i> Daily Classes & Lectures</li>
+            <li><i class="fa-solid fa-circle-check"></i> Full College Tuition</li>
+            <li><i class="fa-solid fa-circle-check"></i> Practical Journal Fees</li>
+            <li><i class="fa-solid fa-circle-check"></i> Exit Exam Coaching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase & Virtual Tour -->
+  <section id="videos" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Video Tour & Campus Highlights</h2>
+        <p>Experience our state-of-the-art laboratories, campus vibe, sports day, and cultural events.</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Promo Video -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0004.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>Rx Pharmacy Overview & Admissions</h4>
+            <p>Introduction to our faculty, ₹1.5L fee breakdown, and student success track record.</p>
+          </div>
+        </div>
+
+        <!-- Vasai Station & Direct Entry Video -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0007.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>1-Min From Vasai Station (Direct Entry)</h4>
+            <p>Walkthrough highlighting prime station accessibility and no-NEET/CET entry criteria.</p>
+          </div>
+        </div>
+
+        <!-- Annual Function Video -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0005.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>Annual Cultural Fest & Awards</h4>
+            <p>Student felicitation, guest honoring, dance, and cultural celebration ceremonies.</p>
+          </div>
+        </div>
+
+        <!-- Sports Day Video -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0014.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>Annual Sports Meet & Tournaments</h4>
+            <p>Turf cricket, football matches, push-up challenges, and student athletic games.</p>
+          </div>
+        </div>
+
+        <!-- Laboratory Walkthrough Video 1 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0015.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>High-Tech Wet Lab Walkthrough</h4>
+            <p>Inspection of titration columns, anatomical skeleton, and optical microscopes.</p>
+          </div>
+        </div>
+
+        <!-- Laboratory Walkthrough Video 2 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="VID-20251220-WA0012.mp4" type="video/mp4">
+              Your browser does not support video.
+            </video>
+          </div>
+          <div class="video-body">
+            <h4>Chemical Inventory & Glassware Desk</h4>
+            <p>Display of reagents, organ models, compound microscopes, and practical desks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filterable Image Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Campus & Student Life Gallery</h2>
+        <p>Browse through actual classroom lectures, advanced lab stations, field trips, and events.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="classrooms">Classrooms & Labs</button>
+        <button class="filter-btn" data-filter="tours">Industrial & Tours</button>
+        <button class="filter-btn" data-filter="posters">Admissions & Results</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryContainer">
+        <!-- Classrooms & Labs -->
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0025.jpg" alt="Classroom Lecture" class="zoomable" />
+          <div class="gallery-caption">Interactive AC Classroom Session</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0024.jpg" alt="Students in Red Uniform" class="zoomable" />
+          <div class="gallery-caption">Students in Red College Uniform</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0026.jpg" alt="Classroom Front View" class="zoomable" />
+          <div class="gallery-caption">Pharmacology Theory Lecture</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0009.jpg" alt="Advanced Analytical Lab" class="zoomable" />
+          <div class="gallery-caption">Main Analytical & Anatomy Wet Lab</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0022.jpg" alt="Anatomy Chart Room" class="zoomable" />
+          <div class="gallery-caption">Physiology Charts & Microscope Station</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0011.jpg" alt="Chemical Inventory Shelf" class="zoomable" />
+          <div class="gallery-caption">Chemical Reagents & Glassware Inventory</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0010.jpg" alt="Titration Stand & Skeleton" class="zoomable" />
+          <div class="gallery-caption">Titration Columns & Anatomy Skeleton</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0001.jpg" alt="Chairman Office" class="zoomable" />
+          <div class="gallery-caption">Chairman Chamber & Counseling Desk</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0016.jpg" alt="Terrace Garden" class="zoomable" />
+          <div class="gallery-caption">Medicinal Herb Garden (Terrace)</div>
+        </div>
+
+        <div class="gallery-item" data-category="classrooms">
+          <img src="IMG-20251220-WA0023.jpg" alt="Spacious Terrace" class="zoomable" />
+          <div class="gallery-caption">Terrace Botanical Garden</div>
+        </div>
+
+        <!-- Industrial & Tours -->
+        <div class="gallery-item" data-category="tours">
+          <img src="IMG-20251220-WA0019.jpg" alt="Industrial Field Visit" class="zoomable" />
+          <div class="gallery-caption">Industrial Field & Manufacturing Plant Visit</div>
+        </div>
+
+        <div class="gallery-item" data-category="tours">
+          <img src="IMG-20251220-WA0008.jpg" alt="Heritage Study Outing" class="zoomable" />
+          <div class="gallery-caption">Heritage & Study Outing Tour</div>
+        </div>
+
+        <div class="gallery-item" data-category="tours">
+          <img src="IMG-20251220-WA0003.jpg" alt="Shangrila Waterpark Picnic" class="zoomable" />
+          <div class="gallery-caption">Shangrila Resort & Waterpark Annual Picnic</div>
+        </div>
+
+        <div class="gallery-item" data-category="tours">
+          <img src="IMG-20251220-WA0017.jpg" alt="Great Paradise Resort Picnic" class="zoomable" />
+          <div class="gallery-caption">Great Paradise Resort Recreational Tour</div>
+        </div>
+
+        <div class="gallery-item" data-category="tours">
+          <img src="IMG-20251220-WA0021.jpg" alt="Evening Gathering at Krishna" class="zoomable" />
+          <div class="gallery-caption">Evening Student Gathering & Dinner</div>
+        </div>
+
+        <!-- Admissions & Posters -->
+        <div class="gallery-item" data-category="posters">
+          <img src="IMG-20251220-WA0018.jpg" alt="D. Pharma Enrolments Poster" class="zoomable" />
+          <div class="gallery-caption">D. Pharma Enrolments 2025–26</div>
+        </div>
+
+        <div class="gallery-item" data-category="posters">
+          <img src="IMG-20251220-WA0002.jpg" alt="D-Pharm & B-Pharm Poster" class="zoomable" />
+          <div class="gallery-caption">Admissions Open D-Pharm & B-Pharm</div>
+        </div>
+
+        <div class="gallery-item" data-category="posters">
+          <img src="IMG-20251220-WA0000.jpg" alt="PCI Certified Quality Education" class="zoomable" />
+          <div class="gallery-caption">PCI Certification & Affiliations</div>
+        </div>
+
+        <div class="gallery-item" data-category="posters">
+          <img src="IMG-20251220-WA0020.jpg" alt="2024-25 Result Card" class="zoomable" />
+          <div class="gallery-caption">2024–25 Results & Toppers Card</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section id="contact" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact & Campus Visit</h2>
+        <p>Connect directly with the institute's leadership for admissions and inquiries.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Leadership Contacts -->
+        <div class="contact-card">
+          <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Direct Inquiries</h3>
+
+          <div class="contact-person">
+            <div class="avatar-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="contact-meta">
+              <h4>Ankit Sir</h4>
+              <span>Chairman</span><br>
+              <a href="tel:+918197669720" class="phone-link"><i class="fa-solid fa-phone"></i> +91 8197669720</a>
+            </div>
+          </div>
+
+          <div class="contact-person" style="border:none; margin-bottom:0; padding-bottom:0;">
+            <div class="avatar-icon"><i class="fa-solid fa-user-nurse"></i></div>
+            <div class="contact-meta">
+              <h4>Simran Ma'am</h4>
+              <span>Director</span><br>
+              <a href="tel:+919834864336" class="phone-link"><i class="fa-solid fa-phone"></i> +91 9834864336</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campus Address -->
+        <div class="contact-card">
+          <h3 style="margin-bottom: 1.25rem; color: var(--primary);">Campus Address</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 0.5rem;"></i>
+            <strong>2nd, 3rd & 4th Floor, Shri Siddhachal Building</strong>,<br>
+            Beside Janta Bazar, Above Titan Showroom,<br>
+            Opp. VVMC Office & ST Bus Depot (Rishikesh Hotel),<br>
+            Station Road, Vasai West (401202), Palghar, Maharashtra.
+          </p>
+          <div style="background: #e0f2fe; color: #0369a1; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem;">
+            <i class="fa-solid fa-person-walking"></i> Exactly 1 minute walk from Vasai Road Railway Station.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="brand-font">Rx Pharmacy Institute</h4>
+          <p>Nurturing future healthcare specialists since 2019 with PCI-approved programs, modern laboratories, and complete exit exam and placement support.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <p><a href="#toppers">Board Results</a></p>
+          <p><a href="#why-choose">Why Choose Us</a></p>
+          <p><a href="#courses">Fee Package (₹1.5L)</a></p>
+          <p><a href="#videos">Video Tour</a></p>
+          <p><a href="#gallery">Campus Photos</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Accreditations</h4>
+          <p>PCI Code: 3561 / 4279</p>
+          <p>MSPC Registration Assistance</p>
+          <p>Bangalore & Lakeside Tie-ups</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Rx Pharmacy Institute. All Rights Reserved. | <a href="https://rxpharmacy.co.in" style="color: var(--accent-gold);">rxpharmacy.co.in</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Photo Previews -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img src="" alt="Enlarged preview" id="lightboxImg" />
+  </div>
+
+  <!-- Mobile Floating Action Bar -->
+  <div class="sticky-bar">
+    <div class="sticky-btns">
+      <a href="tel:+918197669720" class="sticky-btn sticky-call">
+        <i class="fa-solid fa-phone"></i> Call Ankit Sir
+      </a>
+      <a href="https://wa.me/919834864336?text=Hello%20Simran%20Maam,%20I%20want%20to%20inquire%20about%20Pharmacy%20Admissions." class="sticky-btn sticky-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript for Navigation, Filters, and Lightbox -->
+  <script>
+    // Mobile Hamburger Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Gallery Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox Popup for Zoomable Images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+
+    // Admission Form Handler
+    const form = document.getElementById('admissionForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const originalText = btn.innerText;
+      btn.innerText = 'Submitting...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        alert('Thank you! Your seat application has been received. Chairman Ankit Sir or Director Simran Ma\'am will contact you shortly.');
+        form.reset();
+        btn.innerText = originalText;
+        btn.disabled = false;
+      }, 700);
+    });
+  </script>
+</body>
+</html>
